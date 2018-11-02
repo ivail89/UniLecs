@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef67ceb2-2d98-4ff8-95d2-4d0a1c4fb47b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/task_008.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,24 +56,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="11" />
+          <entry key="php" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="11" />
+          <entry key="PHP" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="2704" />
-          <entry key="txt" value="25" />
+          <entry key="php" value="3008" />
+          <entry key="txt" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="2693" />
-          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="PHP" value="2997" />
+          <entry key="PLAIN_TEXT" value="27" />
           <entry key="SQL" value="11" />
         </counts>
       </usages-collector>
@@ -84,12 +85,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/task_007.php">
+        <entry file="file://$PROJECT_DIR$/task_008.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="374">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
-                <element signature="e#6#62#0#PHP" expanded="true" />
+                <element signature="e#6#129#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,6 +118,7 @@
         <option value="$PROJECT_DIR$/task_131.php" />
         <option value="$PROJECT_DIR$/task_006.php" />
         <option value="$PROJECT_DIR$/task_007.php" />
+        <option value="$PROJECT_DIR$/task_008.php" />
       </list>
     </option>
   </component>
@@ -182,6 +184,9 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\UniLecs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\UniLecs" />
     </key>
@@ -219,7 +224,7 @@
       <workItem from="1539930959204" duration="15000" />
       <workItem from="1539967924145" duration="504000" />
       <workItem from="1540189035001" duration="33000" />
-      <workItem from="1541172786743" duration="2993000" />
+      <workItem from="1541172786743" duration="4162000" />
     </task>
     <task id="LOCAL-00001" summary="task #5 - solved">
       <created>1539617988673</created>
@@ -242,11 +247,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541174802422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="task #7 - solved">
+      <created>1541175846755</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541175846755</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25712000" />
+    <option name="totallyTimeSpent" value="26881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="0" width="1936" height="1056" extended-state="6" />
@@ -284,7 +296,8 @@
     <MESSAGE value="task #5 - solved" />
     <MESSAGE value="task #131 - solved" />
     <MESSAGE value="task #6 - solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="task #6 - solved" />
+    <MESSAGE value="task #7 - solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="task #7 - solved" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/task_001.php">
@@ -342,6 +355,16 @@
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
             <element signature="e#6#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_008.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#129#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
