@@ -55,24 +55,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="10" />
+          <entry key="php" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="10" />
+          <entry key="PHP" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="2522" />
-          <entry key="txt" value="24" />
+          <entry key="php" value="2704" />
+          <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="2511" />
-          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="PHP" value="2693" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="SQL" value="11" />
         </counts>
       </usages-collector>
@@ -84,10 +84,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/task_006.php">
+        <entry file="file://$PROJECT_DIR$/task_007.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="242">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding>
+                <element signature="e#6#62#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,6 +116,7 @@
         <option value="$PROJECT_DIR$/task_005.php" />
         <option value="$PROJECT_DIR$/task_131.php" />
         <option value="$PROJECT_DIR$/task_006.php" />
+        <option value="$PROJECT_DIR$/task_007.php" />
       </list>
     </option>
   </component>
@@ -133,6 +137,20 @@
     </navigator>
     <panes>
       <pane id="Scope">
+        <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="UniLecs" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="UniLecs" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
@@ -201,7 +219,7 @@
       <workItem from="1539930959204" duration="15000" />
       <workItem from="1539967924145" duration="504000" />
       <workItem from="1540189035001" duration="33000" />
-      <workItem from="1541172786743" duration="1991000" />
+      <workItem from="1541172786743" duration="2993000" />
     </task>
     <task id="LOCAL-00001" summary="task #5 - solved">
       <created>1539617988673</created>
@@ -217,11 +235,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539968395830</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="task #6 - solved">
+      <created>1541174802422</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541174802422</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24710000" />
+    <option name="totallyTimeSpent" value="25712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="0" width="1936" height="1056" extended-state="6" />
@@ -258,7 +283,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="task #5 - solved" />
     <MESSAGE value="task #131 - solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="task #131 - solved" />
+    <MESSAGE value="task #6 - solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="task #6 - solved" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/task_001.php">
@@ -307,6 +333,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_007.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="e#6#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
