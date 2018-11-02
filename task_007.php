@@ -1,19 +1,26 @@
 <?php
 /**
- * Определить слово максимальной длины в строке.
+ * Вывести слова строки в порядке возврастания
  */
 
 function maxLength($str){
-  $arr = explode(' ', $str);
-  $maxWords = array_shift($arr);
-  foreach ($arr as $word){
-    if (strlen($maxWords) < strlen($word)) $maxWords = $word;
+  $words = explode(' ', $str);
+  $lengths = array();
+  for ($i = 0; $i < count($words); $i++){
+    $lengths[$i] = strlen($words[$i]);
   }
-  return "$maxWords <br/>";
+  asort($lengths);
+  foreach ($lengths as $key => $value){
+    echo $words[$key].'<br/>';
+  }
 }
 
 $str1 = "boB bbo 123123";
 $str2 = "123 bbo132 boB";
 $str3 = "tcAtt";
 
-echo maxLength($str1).maxLength($str2).maxLength($str3);
+maxLength($str1);
+echo '<br/>';
+maxLength($str2);
+echo '<br/>';
+maxLength($str3);
