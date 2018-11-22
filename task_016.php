@@ -10,6 +10,7 @@ $cash_able = array(
   500 => 10,
   100 => 10,
   50 => 1000,
+  30 => 1000,
 );
 
 $cash = array(
@@ -18,27 +19,41 @@ $cash = array(
   500 => 0,
   100 => 0,
   50 => 0,
+  30 => 0,
 );
 
+$nominal = array(5000, 1000, 500, 100, 50, 30);
+
 function bankomat($sum){
-  if ($sum % 50 != 0) return "Sum isn'n correct";
-  global $cash, $cash_able;
-  foreach ($cash as $key => $value){
-    $x = floor($sum / $key);
-    if ($x <= $cash_able[$key]){
-      $cash[$key] = $x;
-      $sum %= $key;
-    } else {
-      $cash[$key] = $cash_able[$key];
-      $sum -= $cash_able[$key]*$key;
+  global $cash_able, $cash, $nominal;
+
+  $tmpSum = $sum;
+  foreach ($nominal as $n) {
+    $sum = $tmpSum;
+    foreach ($cash as $k => $v) $cash[$k] = 0;
+    foreach ($cash as $key => $value) {
+      if ($key <= $n) {
+        $x = floor($sum / $key);
+        if ($x <= $cash_able[$key]) {
+          $cash[$key] = $x;
+          $sum %= $key;
+        } else {
+          $cash[$key] = $cash_able[$key];
+          $sum -= $cash_able[$key] * $key;
+        }
+      }
     }
+
+    if ($sum == 0) break;
   }
+  if ($sum > 0) return "Sum isn'n correct";
   return $cash;
 }
 
-foreach (bankomat(12250) as $key => $value) {
-  if ($value != 0)
-    echo ($key != 50) ? "$key*$value + ":"$key*$value";
-}
-
-
+$res = bankomat(120);
+if (is_array($res)){
+  foreach ($res as $key => $value) {
+    if ($value != 0)
+      echo ($key != 30) ? "$key*$value + ":"$key*$value";
+  }
+} else echo $res;
