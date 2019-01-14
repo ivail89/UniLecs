@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef67ceb2-2d98-4ff8-95d2-4d0a1c4fb47b" name="Default Changelist" comment="task #15 - готово">
+    <list default="true" id="ef67ceb2-2d98-4ff8-95d2-4d0a1c4fb47b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/task_018.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_016.php" beforeDir="false" afterPath="$PROJECT_DIR$/task_016.php" afterDir="false" />
     </list>
@@ -44,37 +45,38 @@
     <session id="-1811006547">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
-          <entry key="project.open.time.0" value="5" />
+          <entry key="project.closed" value="24" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="27" />
+          <entry key="php" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="27" />
+          <entry key="PHP" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="8865" />
-          <entry key="txt" value="199" />
+          <entry key="php" value="9215" />
+          <entry key="txt" value="220" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="8854" />
-          <entry key="PLAIN_TEXT" value="199" />
+          <entry key="PHP" value="9204" />
+          <entry key="PLAIN_TEXT" value="220" />
           <entry key="SQL" value="11" />
         </counts>
       </usages-collector>
@@ -85,13 +87,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task_016.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="366">
+              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/task_018.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
               <folding>
-                <element signature="e#6#148#0#PHP" expanded="true" />
+                <element signature="e#6#124#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,6 +140,7 @@
         <option value="$PROJECT_DIR$/task_014.php" />
         <option value="$PROJECT_DIR$/task_015.php" />
         <option value="$PROJECT_DIR$/task_016.php" />
+        <option value="$PROJECT_DIR$/task_018.php" />
       </list>
     </option>
   </component>
@@ -194,10 +206,10 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\UniLecs" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\UniLecs" />
     </key>
   </component>
@@ -248,7 +260,9 @@
       <workItem from="1542720229341" duration="3185000" />
       <workItem from="1542734481228" duration="2518000" />
       <workItem from="1542798583388" duration="9172000" />
-      <workItem from="1542876547547" duration="10829000" />
+      <workItem from="1542876547547" duration="10915000" />
+      <workItem from="1542898163301" duration="54000" />
+      <workItem from="1547485828657" duration="1125000" />
     </task>
     <task id="LOCAL-00001" summary="task #5 - solved">
       <created>1539617988673</created>
@@ -348,17 +362,24 @@
       <option name="project" value="LOCAL" />
       <updated>1542806312244</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="task #16 - все три части">
+      <created>1542889041245</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1542889041246</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72980000" />
+    <option name="totallyTimeSpent" value="74245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="0" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.10181237" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.10394456" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.16257995" />
       <window_info id="Favorites" order="2" sideWeight="0.5005417" side_tool="true" weight="0.16257995" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -436,7 +457,8 @@
     <MESSAGE value="task #13 - готово" />
     <MESSAGE value="task #14 - готово" />
     <MESSAGE value="task #15 - готово" />
-    <option name="LAST_COMMIT_MESSAGE" value="task #15 - готово" />
+    <MESSAGE value="task #16 - все три части" />
+    <option name="LAST_COMMIT_MESSAGE" value="task #16 - все три части" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/task_001.php">
@@ -553,10 +575,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/task_016.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="366">
+          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_018.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#6#148#0#PHP" expanded="true" />
+            <element signature="e#6#124#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
