@@ -45,6 +45,13 @@ foreach ($letters as $key => $letter){
   }
 }
 
+$res = [];
+foreach ($arr_word[$word[$len_word]] as $value)
+  $res[] = buildWord($len_word-1, $value[3]) . ' | '. $value[0] . ' - ' . $value[1] . "\n";
+$res = array_unique ($res);
+
+print_r($res);
+
 /*
  * i, j - кординаты буквы вокруг которой проверяем следующую букву
  * next_letter - искомая буква
@@ -64,4 +71,17 @@ function selectionSuitable($prev_id, $i, $j, $next_letter){
   if (($i != 0) && ($j != 0) && ($matrix[$i-1][$j-1] == $next_letter)) $res[] = [$i-1, $j-1, uniqid(), $prev_id]; //Направление -1 1
 
   return $res;
+}
+
+function buildWord ($letter_pos, $prev_id){
+  global  $arr_word, $word;
+  foreach ($arr_word[$word[$letter_pos]] as $item){
+    if ($item[2] == $prev_id){
+      if ($letter_pos == 0) {
+        return  "$item[1] - $item[0]";
+      } else {
+        return buildWord($letter_pos-1 , $item[3]) . ' | '. "$item[0] - $item[1]";
+      }
+    }
+  }
 }
