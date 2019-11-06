@@ -6,94 +6,47 @@
  */
 
 header("Content-Type: text/plain; charset=utf8"); // Без этого перенос строки не работает
-$matrix =[
+$word = 'bird'; // искомое слово
+$matrix =[ // буквенная матрица
 	['d', 'b', 'i', 'r', 'd'],
-	['d', 'i', 'i', 'b', 'a'],
+	['d', 'r', 'i', 'b', 'a'],
 	['r', 'r', 'a', 'r', 'a'],
 	['i', 'd', 'a', 'b', 'd'],
-	['b', 'a', 'a', 'i', 'r']
+	['b', 'a', 'a', 'i', 'r'],
+  ['b', 'a', 'a', 'i', 'r']
 ];
 
-$word = 'bird';
+$arr_word = array_flip(str_split($word)); // Получаем массив с индексами букв исходного слова
+foreach ($arr_word as $i => $value) { $arr_word[$i] = []; } // В эти массивы будем записывать найденные буквы
+$width = count($matrix[0]);
+$height = count($matrix);
 
 // Определяем все варианты начала слова
-$start_word = array();
-$i_count = count($matrix); 
-$j_count = count($matrix[0]); 
-$length_word = strlen($word);
-foreach ($matrix as $i => $string){
-	foreach ($string as $j => $letter){
-		if ($letter == $word[0]){
-			$start_word[] = [$j, $i];
-			echo "$j : $i - is start\n";
-		}
-	}
-}
+foreach ($matrix as $i => $string)
+	foreach ($string as $j => $letter)
+		if ($letter == $word[0]) {
+      $arr_word[$word[0]][] = [$j, $i];
+      echo "$i : $j \n";
+    }
 
-// Поочереди проверяем все напрвления от первой буквы
-foreach ($start_word as $first_letter){
-	
-	//Направление 01
+print_r(choiseSuitable(5,0,'i'));
+
 /*
-	if (($first_letter[1] + 1 - $length_word) < 0){ // Проверяем сколько символов до края матрицы, на случай если слово не помещается
-		echo "Позиция $first_letter[0]:$first_letter[1] Направление 01 - не подходит по длине\n";
-	} else {
-		$str = '';
-		echo "Позиция $first_letter[0]:$first_letter[1] - Направление 01: ";
-		for ($i = $length_word; $i > 0; $i--){
-			$str .= $matrix[$first_letter[1]-$length_word + $i][$first_letter[0]]; // От первой буквы собираем слово равное длине искомого
-		} 
-		if ($word == $str) echo "Совпадает\n";
-		else echo "Не совпадает\n";
-	}
+* i, j - кординаты буквы вокруг которой проверяем следующую букву
+* next_letter - искомая буква
 */
-	//Направление 11
-	
-	//Направление 10
-/*
-	if (($first_letter[0] + $length_word) > $j_count){ // Проверяем сколько символов до края матрицы, на случай если слово не помещается
-		echo "Позиция $first_letter[0]:$first_letter[1] Направление 10 - не подходит по длине\n";
-	} else {
-		$str = '';
-		echo "Позиция $first_letter[0]:$first_letter[1] - Направление 10: ";
-		for ($i = 0; $i < $length_word; $i++){
-			$str .= $matrix[$first_letter[1]][$first_letter[0] + $i]; // От первой буквы собираем слово равное длине искомого
-		} 
-		if ($word == $str) echo "Совпадает\n";
-		else echo "Не совпадает\n";
-	}
-*/
-	
-	//Направление 1-1
-	
-	//Направление 0-1
-/*
-	if (($first_letter[1] + $length_word) > $i_count){ // Проверяем сколько символов до края матрицы, на случай если слово не помещается
-		echo "Позиция $first_letter[0]:$first_letter[1] Направление 0-1 - не подходит по длине\n";
-	} else {
-		$str = '';
-		echo "Позиция $first_letter[0]:$first_letter[1] - Направление 0-1: ";
-		for ($i = 0; $i < $length_word; $i++){
-			$str .= $matrix[$first_letter[1] + $i][$first_letter[0]]; // От первой буквы собираем слово равное длине искомого
-		} 
-		if ($word == $str) echo "Совпадает\n";
-		else echo "Не совпадает\n";
-	}
-*/	
-	//Направление -1-1
-	
-	//Направление -10
-	if (($first_letter[1] + $length_word) > $i_count){ // Проверяем сколько символов до края матрицы, на случай если слово не помещается
-		echo "Позиция $first_letter[0]:$first_letter[1] Направление 0-1 - не подходит по длине\n";
-	} else {
-		$str = '';
-		echo "Позиция $first_letter[0]:$first_letter[1] - Направление 0-1: ";
-		for ($i = 0; $i < $length_word; $i++){
-			$str .= $matrix[$first_letter[1] + $i][$first_letter[0]]; // От первой буквы собираем слово равное длине искомого
-		} 
-		if ($word == $str) echo "Совпадает\n";
-		else echo "Не совпадает\n";
-	}
-	
-	//Направление -11
-} 
+function choiseSuitable($i, $j, $next_letter){
+  $res = [];
+  global $matrix, $width, $height;
+
+  if (($j != 0) && ($matrix[$i][$j-1] == $next_letter)) $res[] = [$i,$j-1]; //Направление 0 1
+  if (($i+1 != $width) && ($j != 0) && ($matrix[$i+1][$j-1] == $next_letter)) $res[] = [$i+1,$j-1]; //Направление 1 1
+  if (($i+1 != $width) && ($matrix[$i+1][$j] == $next_letter)) $res[] = [$i+1,$j]; //Направление 1 0
+  if (($i+1 != $width) && ($j+1 != $height) && ($matrix[$i+1][$j+1] == $next_letter)) $res[] = [$i+1,$j+1]; //Направление 1 -1
+  if (($j+1 != $height) && ($matrix[$i][$j+1] == $next_letter)) $res[] = [$i,$j+1]; //Направление 0 -1
+  if (($i != 0) && ($j+1 != $height) && ($matrix[$i-1][$j+1] == $next_letter)) $res[] = [$i-1,$j+1]; //Направление -1 -1
+  if (($i != 0) && ($matrix[$i-1][$j] == $next_letter)) $res[] = [$i-1,$j]; //Направление -1 0
+  if (($i != 0) && ($j != 0) && ($matrix[$i-1][$j-1] == $next_letter)) $res[] = [$i-1,$j-1]; //Направление -1 1
+
+  return $res;
+}
