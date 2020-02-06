@@ -39,7 +39,7 @@ $dictionary = [
 // Формируем таблицу значений
 for ($i = 6; $i < N+1; $i++){
   $dictionary[$i] = ['weight' => $i, 'operation'=> '']; // По умолчанию считаем число единиц равным самому числу
-  for ($j = 1; $j < $i; $j++){
+  for ($j = 2; $j < $i; $j++){
     // Проверяем первую формулу, можно ли сделать меньшую сумму
     if ($dictionary[$j]['weight'] + $dictionary[$i-$j]['weight'] < $dictionary[$i]['weight']){
       $dictionary[$i]['weight'] = $dictionary[$j]['weight'] + $dictionary[$i-$j]['weight'];
