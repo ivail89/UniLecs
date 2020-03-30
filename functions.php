@@ -18,7 +18,7 @@ function printMatrix($arr){
 }
 
 // Получить все кобинации (сочетания) из множества N по M в каждом наборе
-function combinationsM_N($n, $m){
+function combinationsN_M($n, $m){
   $arr = [];
   for ($i = 0; $i < $m; $i++) {
     $arr[$i] = $i + 1;
