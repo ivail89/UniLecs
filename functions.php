@@ -45,7 +45,27 @@ function distanceBetweenPoints($x1, $y1, $x2, $y2){
   return sqrt(($x2 - $x1)**2 + ($y2 - $y1)**2);
 }
 
+// Поиск наибольшего общего делителя (НОД) двух чисел, в остнове лежит алгоритм Евклида
+// https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%95%D0%B2%D0%BA%D0%BB%D0%B8%D0%B4%D0%B0
+function gcd($a, $b){
+  // Меняем значения местами, чтобы не получить ошибку в будущем
+  if ($b > $a) list ($a, $b) = [$b, $a];
+  $r = $a % $b; // Вычисляем до цикла, может быть b есть делитель для а
+  while ($r > 0){
+    $a = $b;
+    $b = $r;
+    $r = $a % $b;
+  }
+  return $b;
+}
+
+// Вычисление наименьшего общего кратного (НОД)
+//https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D0%B5_%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5
+function lcm($a, $b){
+  return abs($a*$b) / gcd($a, $b);
+}
+
 //echo distanceBetweenPoints(0, 0, 10, 10);
 //$r = combinationsM_N(4, 3);
 //printMatrix($r);
-
+//echo lcm(1071, 71);
