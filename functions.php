@@ -5,13 +5,16 @@
  */
 header("Content-Type: text/plain; charset=utf8"); // Без этого перенос строки не работает
 
-// Техническая функция, для вывода матрица, в привычном для человека виде
-function printMatrix($arr){
+/*
+ * Техническая функция, для вывода матрица, в привычном для человека виде
+ * $showIdx - выводим значения индексов
+ */
+function printMatrix($arr, $showIdx = false){
   if (!is_array($arr)) return;
-  foreach ($arr as $line){
+  foreach ($arr as $y => $line){
     if (!is_array($line)) break;
-    foreach ($line as $item){
-      echo $item . ' ';
+    foreach ($line as $x => $item){
+      echo $showIdx ? "($x,$y) " : $item . ' ';
     }
     echo PHP_EOL;
   }
@@ -63,6 +66,19 @@ function gcd($a, $b){
 //https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D0%B5_%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5
 function lcm($a, $b){
   return abs($a*$b) / gcd($a, $b);
+}
+
+// Поиск левой нижней и правой верхней координаты матрицы по координатам точек
+function findEdgesPoint($arr){
+  list ($minX, $minY) = $arr[0];
+  list ($maxX, $maxY) = $arr[0];
+  foreach ($arr as $line) {
+    if ($line[0] < $minX) $minX = $line[0];
+    if ($line[1] < $minY) $minY = $line[1];
+    if ($line[0] > $maxX) $maxX = $line[0];
+    if ($line[1] > $maxY) $maxY = $line[1];
+  }
+  return [$minX, $minY, $maxX, $maxY];
 }
 
 //echo distanceBetweenPoints(0, 0, 10, 10);
