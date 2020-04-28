@@ -81,6 +81,27 @@ function findEdgesPoint($arr){
   return [$minX, $minY, $maxX, $maxY];
 }
 
+// Получить все варинты чисел для n битов
+function setsOfBits($n){
+  if ($n == 1) {
+    return ['0', '1'];
+  }
+  $arr = setsOfBits($n - 1);
+  $res = [];
+  foreach ($arr as $a) {
+    $res [] = $a . '0';
+    $res [] = $a . '1';
+  }
+  return $res;
+}
+
+$arr = setsOfBits(7);
+$n = 1;
+foreach ($arr as $a) {
+  if (strpos($a, '111') !== false) continue;
+  echo $n . ': ' . $a . PHP_EOL;
+  $n++;
+}
 //echo distanceBetweenPoints(0, 0, 10, 10);
 //$r = combinationsM_N(4, 3);
 //printMatrix($r);
