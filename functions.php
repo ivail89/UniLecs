@@ -95,13 +95,23 @@ function setsOfBits($n){
   return $res;
 }
 
-$arr = setsOfBits(7);
+// Получение простых чисел от 2 до n
+function findPrimeNumber($n){
+  $arr2 = array_fill(2, $n-1, true); // Создаём исходный список
+  foreach ($arr2 as $key => $value) // Перебираем элементы всего списка
+    for ($i = $key; $n+1 > $i * $key; $i++) unset($arr2[$i*$key]); // Вычёркиваем все кратные данному числу
+  return $arr2;
+}
+
+
+
+/*$arr = setsOfBits(7);
 $n = 1;
 foreach ($arr as $a) {
   if (strpos($a, '111') !== false) continue;
   echo $n . ': ' . $a . PHP_EOL;
   $n++;
-}
+}*/
 //echo distanceBetweenPoints(0, 0, 10, 10);
 //$r = combinationsM_N(4, 3);
 //printMatrix($r);
