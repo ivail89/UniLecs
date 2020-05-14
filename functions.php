@@ -65,7 +65,8 @@ function gcd($a, $b){
 // Вычисление наименьшего общего кратного (НОД)
 //https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D0%B5_%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5
 function lcm($a, $b){
-  return abs($a*$b) / gcd($a, $b);
+  $res = abs($a*$b) / gcd($a, $b);
+  return $res != 1 ? : false;
 }
 
 // Поиск левой нижней и правой верхней координаты матрицы по координатам точек
