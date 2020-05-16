@@ -104,6 +104,29 @@ function findPrimeNumber($n){
   return $arr2;
 }
 
+/*
+ * Расложить число на простые множители
+ * На выходе будет массив с парами [number, degree]
+ * number - простое число
+ * degree - степень простого числа
+ */
+function separateNumberOnPrimeNumbers($n){
+  $arr = findPrimeNumber($n);       // Нашли все простые числа
+  $res = [];
+  foreach ($arr as $number => $v) { // Раскладываем число на простые множетели и их степени
+    if ($n % $number == 0) {        // Нашли простой дилитель
+      $degree = 1;
+      $n = intdiv($n, $number);     // Уменьшаем число на этот делитель
+      while ($n % $number == 0) {   // проверим может степень это числа выше 1
+        $n = intdiv($n, $number);
+        $degree++;
+      }
+      $res [] = [$number, $degree];
+      if ($n == 0) break;           // Чтобы цикл не молотил в холотсую выходим из него
+    }
+  }
+  return $res;
+}
 
 
 /*$arr = setsOfBits(7);
@@ -117,3 +140,6 @@ foreach ($arr as $a) {
 //$r = combinationsM_N(4, 3);
 //printMatrix($r);
 //echo lcm(1071, 71);
+
+//print_r(separateNumberOnPrimeNumbers(525));
+//print_r(separateNumberOnPrimeNumbers(199));
