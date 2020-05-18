@@ -128,6 +128,14 @@ function separateNumberOnPrimeNumbers($n){
   return $res;
 }
 
+// Вычисление факториала числа n
+function factorial($n){
+  $res = 1;
+  for ($i = 1; $i < $n + 1; $i++) {
+    $res *= $i;
+  }
+  return $res;
+}
 
 /*$arr = setsOfBits(7);
 $n = 1;
@@ -140,6 +148,3 @@ foreach ($arr as $a) {
 //$r = combinationsM_N(4, 3);
 //printMatrix($r);
 //echo lcm(1071, 71);
-
-//print_r(separateNumberOnPrimeNumbers(525));
-//print_r(separateNumberOnPrimeNumbers(199));
