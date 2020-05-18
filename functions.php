@@ -104,7 +104,14 @@ function findPrimeNumber($n){
   return $arr2;
 }
 
-
+// Вычисление факториала числа n
+function factorial($n){
+  $res = 1;
+  for ($i = 1; $i < $n + 1; $i++) {
+    $res *= $i;
+  }
+  return $res;
+}
 
 /*$arr = setsOfBits(7);
 $n = 1;
