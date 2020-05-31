@@ -7,3 +7,4 @@ RUN apt-get update && apt-get install -y wget git unzip \
 	
 RUN echo "zend_extension = xdebug.so" >> /usr/local/etc/php/php.ini
 RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
+RUN docker-php-ext-install bcmath
