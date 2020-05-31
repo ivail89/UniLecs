@@ -137,6 +137,25 @@ function factorial($n){
   return $res;
 }
 
+// вычисление биномиального коэффициента Cnk
+// воспользуемся аналитической формулой http://e-maxx.ru/algo/binomial_coeff,
+// применим возможности php для работы с большими числами https://www.php.net/manual/ru/book.bc.php
+function cnk($n, $k){
+  $fn = 1;
+  for ($i = 1; $i < $n+1; $i++) $fn = bcmul($fn, $i);
+
+  $fk = 1;
+  for ($i = 1; $i < $k+1; $i++) $fk = bcmul($fk, $i);
+
+  $nk = $n - $k;
+  $fnk = 1;
+  for ($i = 1; $i < $nk+1; $i++) $fnk = bcmul($fnk, $i);
+
+  $cnk = bcdiv($fn, bcmul($fk, $fnk));
+
+  return $cnk;
+}
+
 /*$arr = setsOfBits(7);
 $n = 1;
 foreach ($arr as $a) {
