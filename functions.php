@@ -156,6 +156,14 @@ function cnk($n, $k){
   return $cnk;
 }
 
+//Функция для вывода содержимого в архиве в удобном для анализа виде
+function printArray($arr){
+  foreach ($arr as $value){
+    echo $value . ' ';
+  }
+  echo PHP_EOL;
+}
+
 /*$arr = setsOfBits(7);
 $n = 1;
 foreach ($arr as $a) {
