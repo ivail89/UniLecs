@@ -196,6 +196,18 @@ function getAllSummands($n, $m)
   return $result;
 }
 
+// вычисляем сумму подматрицы
+function sumSubMatrix($matrix, $x1, $y1, $x2, $y2)
+{
+  $sum = 0;
+  for ($i = $y1; $i < $y2 + 1; $i++) {
+    for ($j = $x1; $j < $x2 + 1; $j++) {
+      $sum += $matrix[$i][$j];
+    }
+  }
+  return $sum;
+}
+
 //printMatrix(getAllSummands(3, 2));
 
 /*$arr = setsOfBits(7);
