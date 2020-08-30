@@ -8,19 +8,21 @@
  */
 require_once 'functions.php';
 $n = 5;
-$half_n = round($n/2, 0, PHP_ROUND_HALF_UP);
-echo $half_n;
+$vars = getAllSummands($n,$n);
 $max = [
-  'a' => 0,
-  'b' => 0,
+  'members' => 0,
   'mult' => 0
 ];
-for ($i = 2; $i < $half_n + 1; $i++) {
-  if ($i * ($n - $i) > $max['mult']) {
+foreach ($vars as $var) {
+  $mult = 1;
+  foreach ($var as $v) {
+    if ($v == 0) continue;
+    $mult *= $v;
+  }
+  if ($mult > $max['mult']) {
     $max = [
-      'a' => $i,
-      'b' => $n-$i,
-      'mult' => $i * ($n - $i)
+      'members' => $var,
+      'mult' => $mult
     ];
   }
 }
