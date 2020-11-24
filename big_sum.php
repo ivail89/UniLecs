@@ -5,52 +5,42 @@
  * https://habr.com/ru/company/badoo/blog/346652/
  */
 
-$str = '9999 99999999';
+$str1 = '1 9';
+$str2 = '1 99';
+$str3 = '99 1';
+$str4 = '123 123';
+$str5 = '99999999999999999999999 88888888888888888888888';
 
-$numbers = explode(' ', $str);
-if (strlen($numbers[0]) > strlen($numbers[1])) {
-  $numbers = [$numbers[1], $numbers[0]];
-}
+function big_sum($str)
+{
+  $str = trim($str);
+  list ($na, $nb) = explode(' ', $str);
+  $la = strlen($na);
+  $lb = strlen($nb);
 
-echo $numbers[0] + $numbers[1] . "</br>";
+  echo ($na + $nb) . ' - ';
 
-$len_str0 = strlen($numbers[0]) - 1;
-$len_str1 = strlen($numbers[1]) - 1;
-
-$delta = $len_str1 - $len_str0;
-$rest = 0;
-$result = '';
-for ($i = 0; $i < $len_str0 + 1; $i++) {
-  $a = (int)$numbers[0][$len_str0 - $i];
-  $b = (int)$numbers[1][$len_str1 - $i];
-
-  $c = $a + $b + $rest;
-  if ($c > 9) {
-    $result = ($c % 10) . $result;
-    $rest = intdiv($c, 10);
-  } else {
-    $rest = 0;
-    $result = $c . $result;
+  if ($la > $lb) {
+    list($na, $nb) = [$nb, $na];
+    list($la, $lb) = [$lb, $la];
   }
-}
 
-for ($i = 0; $i < $delta; $i++) {
-  $a = (int)$numbers[1][$len_str1 - $delta - $i];
-  $c = $a + $rest;
-  if ($c > 9) {
-    $result = ($c % 10) . $result;
-    $rest = intdiv($c, 10);
-  } else {
-    $rest = 0;
-    $result = $c . $result;
-    $head = substr($numbers[1], 0, $len_str1 - $delta - $i);
-    $result = $head . $result;
-    break;
+  $rest = 0;
+  $result = '';
+  for ($i = 0; $i < $lb; $i++) {
+    $a = $la > $i ? (int)$na[$la - $i - 1] : 0;
+    $b = (int)$nb[$lb - $i - 1];
+
+    $sum = $a + $b + $rest;
+    $result = ($sum % 10) . $result;
+    $rest = intdiv($sum, 10);
   }
+
+  return ($rest > 0) ? ($rest . $result) : $result;
 }
 
-if ($rest > 0) {
-  $result = $rest . $result;
-}
-
-echo $result;
+echo big_sum($str1) . "</br>";
+echo big_sum($str2) . "</br>";
+echo big_sum($str3) . "</br>";
+echo big_sum($str4) . "</br>";
+echo big_sum($str5) . "</br>";
