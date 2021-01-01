@@ -14,7 +14,7 @@ function printMatrix($arr, $showIdx = false){
   foreach ($arr as $y => $line){
     if (!is_array($line)) break;
     foreach ($line as $x => $item){
-      echo $showIdx ? "($x,$y) " : $item . ' ';
+      echo $showIdx ? "($x,$y) " : $item . "\t";
     }
     echo PHP_EOL;
   }
@@ -206,6 +206,18 @@ function sumSubMatrix($matrix, $x1, $y1, $x2, $y2)
     }
   }
   return $sum;
+}
+
+// Определяем по трем точкам, где лежит точка
+// Первые две точки (А и Б) это точки линии
+// Третья точка (С), по ней определяем где она лежит
+// D = (х3 - х1) * (у2 - у1) - (у3 - у1) * (х2 - х1)
+//- Если D = 0 - значит, точка С лежит на прямой АБ.
+//- Если D < 0 - значит, точка С лежит слева от прямой.
+//- Если D > 0 - значит, точка С лежит справа от прямой.
+function positionPoint($x1, $y1, $x2, $y2, $x3, $y3)
+{
+  return ($x3 - $x1) * ($y2 - $y1) - ($y3 - $y1) * ($x2 - $x1);
 }
 
 //printMatrix(getAllSummands(3, 2));
