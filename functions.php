@@ -156,7 +156,7 @@ function cnk($n, $k){
   return $cnk;
 }
 
-//Функция для вывода содержимого в архиве в удобном для анализа виде
+//Функция для вывода содержимого в массиве в удобном для анализа виде
 function printArray($arr){
   foreach ($arr as $value){
     echo $value . ' ';
@@ -219,17 +219,3 @@ function positionPoint($x1, $y1, $x2, $y2, $x3, $y3)
 {
   return ($x3 - $x1) * ($y2 - $y1) - ($y3 - $y1) * ($x2 - $x1);
 }
-
-//printMatrix(getAllSummands(3, 2));
-
-/*$arr = setsOfBits(7);
-$n = 1;
-foreach ($arr as $a) {
-  if (strpos($a, '111') !== false) continue;
-  echo $n . ': ' . $a . PHP_EOL;
-  $n++;
-}*/
-//echo distanceBetweenPoints(0, 0, 10, 10);
-//$r = combinationsM_N(4, 3);
-//printMatrix($r);
-//echo lcm(1071, 71);
