@@ -172,6 +172,23 @@ function separateNumberOnPrimeNumbers($n){
   return $res;
 }
 
+/*
+ * Разложить число на простые множители
+ * На выходе массив простых множителей
+ * @return array
+ */
+function separateNumberOnPrimeNumbersV2(int $n)
+{
+  $res = array();
+  for ($i = 2; $i < $n+1; $i++) {
+    while ($n % $i == 0) {
+      array_push($res, $i);
+      $n /= $i;
+    }
+  }
+  return $res;
+}
+
 // Вычисление факториала числа n
 function factorial($n){
   $res = 1;
