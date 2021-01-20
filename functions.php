@@ -328,3 +328,16 @@ function positionPoint($x1, $y1, $x2, $y2, $x3, $y3)
 {
   return ($x3 - $x1) * ($y2 - $y1) - ($y3 - $y1) * ($x2 - $x1);
 }
+
+// Определяем сумму цифр числа или его корень
+// @return int
+function getRootNumber(int $n)
+{
+  $sum = 0;
+  while (intdiv($n, 10)) {
+    $sum += $n % 10;
+    $n = intdiv($n, 10);
+  }
+  $sum += $n;
+  return $sum;
+}
