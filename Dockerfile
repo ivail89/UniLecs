@@ -1,10 +1,11 @@
-FROM php:7.2-apache
+FROM php:7.4-apache
 COPY . /var/www/html/
 
 RUN apt-get update && apt-get install -y wget git unzip \
-    && pecl install xdebug-2.7.1 \
-    && docker-php-ext-enable xdebug
-	
+    && pecl install xdebug
 RUN echo "zend_extension = xdebug.so" >> /usr/local/etc/php/php.ini
-RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
-RUN docker-php-ext-install bcmath
+RUN echo "xdebug.mode=debug" >> /usr/local/etc/php/php.ini
+RUN echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/php.ini
+RUN echo "xdebug.discover_client_host = 1" >> /usr/local/etc/php/php.ini
+RUN echo "xdebug.idekey=PHPSTORM" >> /usr/local/etc/php/php.ini
+RUN echo "xdebug.log=/tmp/xdebug.log" >> /usr/local/etc/php/php.ini
