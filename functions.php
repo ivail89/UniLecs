@@ -375,3 +375,39 @@ function fibonachi(int $n)
   }
   return $arr[$n-1];
 }
+
+// Расскладываем число на цифры
+function decomposeNumber2Digits(int $n)
+{
+  $res = [];
+  while ($n > 9) {
+    array_unshift($res, $n % 10);
+    $n = intdiv($n, 10);
+  }
+  array_unshift($res, $n);
+  return $res;
+}
+
+// поиск минимального из двух числе используя лексографический подход
+function min_lex(int $a, int $b)
+{
+  $aa = decomposeNumber2Digits($a);
+  $bb = decomposeNumber2Digits($b);
+
+  $na = count($aa);
+  $nb = count($bb);
+
+  $n = $na < $nb ? $na : $nb;
+
+  for ($i = 0; $i < $n; $i++) {
+    if ($aa[$i] == $bb[$i]) {
+      continue;
+    } elseif ($aa[$i] < $bb[$i]) {
+      return $a;
+    } else {
+      return $b;
+    }
+  }
+
+  return $na < $nb ? $na : $nb;
+}
