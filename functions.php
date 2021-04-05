@@ -82,7 +82,7 @@ function findEdgesPoint($arr){
   return [$minX, $minY, $maxX, $maxY];
 }
 
-// Получить все варинты чисел для n битов
+// Получить все варианты чисел для n битов
 function setsOfBits($n){
   if ($n == 1) {
     return ['0', '1'];

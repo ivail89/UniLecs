@@ -16,7 +16,7 @@ $str3 = '[{)]';
 $str4 = '{[}]';
 
 
-function check_brackets($str)
+function check_brackets(string $str)
 {
   $stack = array();
   $l = strlen($str);
@@ -24,12 +24,13 @@ function check_brackets($str)
     ')' => '(',
     '}' => '{',
     ']' => '[',
+    '1' => '0',
   ];
   for ($i = 0; $i < $l; $i++) {
     $ss = $str[$i];
-    if (in_array($ss, ['(', '{', '['])){
+    if (in_array($ss, ['(', '{', '[', '0'])){
       $stack [] = $ss;
-    } elseif (in_array($ss, [')', ']', '}'])) {
+    } elseif (in_array($ss, [')', ']', '}', '1'])) {
       $symbol = array_pop($stack);
       if ($symbol != $close[$ss]) {
         return 'error';
@@ -42,7 +43,7 @@ function check_brackets($str)
   return 'good';
 }
 
-echo check_brackets($str1) . "</br>";
-echo check_brackets($str2) . "</br>";
-echo check_brackets($str3) . "</br>";
-echo check_brackets($str4) . "</br>";
+//echo check_brackets($str1) . "</br>";
+//echo check_brackets($str2) . "</br>";
+//echo check_brackets($str3) . "</br>";
+//echo check_brackets($str4) . "</br>";
